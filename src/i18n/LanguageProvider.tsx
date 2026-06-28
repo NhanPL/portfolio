@@ -1,16 +1,8 @@
 import { useEffect, useMemo, useState, type PropsWithChildren } from 'react'
 import { languageOptions } from '@/data/common'
-import { translations, type LanguageCode, type Translation } from '@/data'
+import { translations, type LanguageCode } from '@/data'
 import { LanguageContext } from '@/i18n/languageContext'
-
-type LanguageContextValue = {
-  language: LanguageCode
-  languages: typeof languageOptions
-  setLanguage: (language: LanguageCode) => void
-  t: Translation
-}
-
-export type { LanguageContextValue }
+import { updateDocumentSeo } from '@/utils/seo'
 
 const storageKey = 'portfolio-language'
 
@@ -36,12 +28,8 @@ export function LanguageProvider({ children }: PropsWithChildren) {
   const t = translations[language]
 
   useEffect(() => {
-    document.documentElement.lang = language
-    document.title = t.seo.title
-
-    const description = document.querySelector<HTMLMetaElement>('meta[name="description"]')
-    description?.setAttribute('content', t.seo.description)
-  }, [language, t.seo.description, t.seo.title])
+    updateDocumentSeo(language, t.seo)
+  }, [language, t.seo])
 
   const value = useMemo(
     () => ({
