@@ -1,27 +1,23 @@
 import type { PropsWithChildren } from 'react'
-import { LanguageSwitcher } from '@/components/common'
-import { commonData } from '@/data/common'
+import { Footer } from '@/components/layout/Footer'
+import { Header } from '@/components/layout/Header'
+import { MainContainer } from '@/components/layout/MainContainer'
 import { useLanguage } from '@/hooks/useLanguage'
 
 export function AppLayout({ children }: PropsWithChildren) {
   const { t } = useLanguage()
 
   return (
-    <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      <section className="app-container flex min-h-section flex-col py-6">
-        <header className="flex items-center justify-between">
-          <a
-            className="transition-theme-fast rounded-control text-sm font-semibold tracking-wide text-foreground hover:text-primary-hover focus-visible:outline-none"
-            href={commonData.social.github}
-            aria-label={t.common.openProfile}
-          >
-            {commonData.brand}
-          </a>
-          <LanguageSwitcher />
-        </header>
-
-        {children}
-      </section>
-    </main>
+    <div className="min-h-screen overflow-hidden bg-background text-foreground">
+      <a
+        className="transition-theme-fast fixed left-4 top-4 z-50 -translate-y-24 rounded-control bg-primary px-4 py-2 text-sm font-semibold text-foreground shadow-glow-primary focus:translate-y-0"
+        href="#main-content"
+      >
+        {t.common.skipToContent}
+      </a>
+      <Header />
+      <MainContainer>{children}</MainContainer>
+      <Footer />
+    </div>
   )
 }

@@ -4,10 +4,14 @@ import { commonData } from '@/data/common'
 import { useLanguage } from '@/hooks/useLanguage'
 
 export function HeroSection() {
-  const { language, t } = useLanguage()
+  const { cvUrl, t } = useLanguage()
 
   return (
-    <div className="grid flex-1 items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr]">
+    <section
+      className="app-container grid min-h-section scroll-mt-24 items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr]"
+      id="hero"
+      aria-labelledby="hero-title"
+    >
       <motion.div
         animate={{ opacity: 1, y: 0 }}
         className="max-w-3xl"
@@ -17,7 +21,10 @@ export function HeroSection() {
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-primary-hover">
           {t.hero.greeting}
         </p>
-        <h1 className="font-display text-4xl font-bold leading-tight text-foreground sm:text-6xl lg:text-7xl">
+        <h1
+          className="font-display text-4xl font-bold leading-tight text-foreground sm:text-6xl lg:text-7xl"
+          id="hero-title"
+        >
           {t.hero.name}
         </h1>
         <p className="mt-5 max-w-2xl text-xl text-secondary sm:text-2xl">{t.hero.role}</p>
@@ -27,7 +34,7 @@ export function HeroSection() {
         <div className="mt-8 flex flex-wrap gap-4">
           <a
             className="interactive-lift rounded-control inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-foreground shadow-glow-primary hover:bg-primary-hover hover:interactive-lift-hover focus-visible:outline-none"
-            href={commonData.cv[language]}
+            href={cvUrl}
           >
             {t.hero.downloadCv}
             <ArrowRight className="size-4" aria-hidden="true" />
@@ -56,6 +63,6 @@ export function HeroSection() {
           src={commonData.avatar}
         />
       </motion.div>
-    </div>
+    </section>
   )
 }

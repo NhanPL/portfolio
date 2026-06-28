@@ -123,12 +123,12 @@ Checklist
 
 Checklist
 
-- [ ] Context
-- [ ] Provider
-- [ ] Hook
-- [ ] Switch Language
-- [ ] Save Language
-- [ ] Read LocalStorage
+- [x] Context
+- [x] Provider
+- [x] Hook
+- [x] Switch Language
+- [x] Save Language
+- [x] Read LocalStorage
 
 Acceptance Criteria
 
@@ -142,10 +142,10 @@ Language changes without page reload.
 
 Checklist
 
-- [ ] common.ts
-- [ ] vi.ts
-- [ ] en.ts
-- [ ] ja.ts
+- [x] common.ts
+- [x] vi.ts
+- [x] en.ts
+- [x] ja.ts
 
 Acceptance Criteria
 
@@ -159,10 +159,10 @@ All language files have identical structure.
 
 Checklist
 
-- [ ] Layout
-- [ ] Header
-- [ ] Footer
-- [ ] Main Container
+- [x] Layout
+- [x] Header
+- [x] Footer
+- [x] Main Container
 
 ---
 
