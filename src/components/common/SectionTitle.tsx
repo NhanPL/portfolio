@@ -6,6 +6,7 @@ export type SectionTitleProps = {
   index?: string
   subtitle: string
   title: string
+  titleId?: string
 }
 
 export function SectionTitle({
@@ -14,6 +15,7 @@ export function SectionTitle({
   index,
   subtitle,
   title,
+  titleId,
 }: SectionTitleProps) {
   return (
     <div className={cn('max-w-3xl', className)}>
@@ -27,7 +29,10 @@ export function SectionTitle({
           {subtitle}
         </p>
       </div>
-      <h2 className="font-display text-3xl font-bold leading-tight text-foreground sm:text-4xl">
+      <h2
+        className="font-display text-3xl font-bold leading-tight text-foreground sm:text-4xl"
+        id={titleId}
+      >
         {title}
       </h2>
       {description ? (

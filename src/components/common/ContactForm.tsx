@@ -16,8 +16,17 @@ export type ContactFormProps = {
 }
 
 export function ContactForm({ labels, onSubmit }: ContactFormProps) {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+    if (!onSubmit) {
+      event.preventDefault()
+      return
+    }
+
+    onSubmit(event)
+  }
+
   return (
-    <Card as="form" className="grid gap-4" gradientBorder onSubmit={onSubmit}>
+    <Card as="form" className="grid gap-4" gradientBorder onSubmit={handleSubmit}>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-medium text-foreground" htmlFor="contact-name">
           {labels.name}

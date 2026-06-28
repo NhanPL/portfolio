@@ -1,1 +1,7 @@
+export { AboutSection } from '@/components/sections/AboutSection'
+export { CertificatesSection } from '@/components/sections/CertificatesSection'
+export { ContactSection } from '@/components/sections/ContactSection'
+export { ExperienceSection } from '@/components/sections/ExperienceSection'
 export { HeroSection } from '@/components/sections/HeroSection'
+export { ProjectsSection } from '@/components/sections/ProjectsSection'
+export { SkillsSection } from '@/components/sections/SkillsSection'

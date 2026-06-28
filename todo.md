@@ -259,11 +259,11 @@ Header
 
 Features
 
-- [ ] Sticky
-- [ ] Blur
-- [ ] Active Menu
-- [ ] Mobile Menu
-- [ ] Language Switch
+- [x] Sticky
+- [x] Blur
+- [x] Active Menu
+- [x] Mobile Menu
+- [x] Language Switch
 
 ---
 
@@ -271,13 +271,13 @@ Features
 
 Hero Section
 
-- [ ] Greeting
-- [ ] Name
-- [ ] Job Title
-- [ ] Description
-- [ ] CTA
-- [ ] Download CV
-- [ ] Hero Image
+- [x] Greeting
+- [x] Name
+- [x] Job Title
+- [x] Description
+- [x] CTA
+- [x] Download CV
+- [x] Hero Image
 
 ---
 
@@ -285,9 +285,9 @@ Hero Section
 
 About Section
 
-- [ ] Description
-- [ ] Avatar
-- [ ] Statistics
+- [x] Description
+- [x] Avatar
+- [x] Statistics
 
 ---
 
@@ -295,9 +295,9 @@ About Section
 
 Skills Section
 
-- [ ] Skill Cards
-- [ ] Progress
-- [ ] Hover Effect
+- [x] Skill Cards
+- [x] Progress
+- [x] Hover Effect
 
 ---
 
@@ -305,7 +305,7 @@ Skills Section
 
 Experience Section
 
-Timeline Layout
+Timeline Layout - DONE
 
 ---
 
@@ -313,9 +313,9 @@ Timeline Layout
 
 Projects Section
 
-- [ ] Grid
-- [ ] Project Cards
-- [ ] Hover Animation
+- [x] Grid
+- [x] Project Cards
+- [x] Hover Animation
 
 ---
 
@@ -323,7 +323,7 @@ Projects Section
 
 Certificates Section
 
-Grid Layout
+Grid Layout - DONE
 
 ---
 
@@ -331,8 +331,8 @@ Grid Layout
 
 Contact Section
 
-- [ ] Contact Info
-- [ ] Contact Form
+- [x] Contact Info
+- [x] Contact Form
 
 ---
 
@@ -340,9 +340,9 @@ Contact Section
 
 Footer
 
-- [ ] Social Links
-- [ ] Quick Links
-- [ ] Back To Top
+- [x] Social Links
+- [x] Quick Links
+- [x] Back To Top
 
 ---
 
