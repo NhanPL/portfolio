@@ -109,11 +109,11 @@ Checklist
 
 Checklist
 
-- [ ] Color Palette
-- [ ] Font
-- [ ] Radius
-- [ ] Shadow
-- [ ] Transition
+- [x] Color Palette
+- [x] Font
+- [x] Radius
+- [x] Shadow
+- [x] Transition
 
 ---
 

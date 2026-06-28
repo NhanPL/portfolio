@@ -26,14 +26,14 @@ export function HeroSection() {
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <a
-            className="rounded-app inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-foreground shadow-glow-primary transition hover:bg-primary-hover focus-visible:outline-none"
+            className="interactive-lift rounded-control inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-foreground shadow-glow-primary hover:bg-primary-hover hover:interactive-lift-hover focus-visible:outline-none"
             href={commonData.cv[language]}
           >
             {t.hero.downloadCv}
             <ArrowRight className="size-4" aria-hidden="true" />
           </a>
           <a
-            className="rounded-app inline-flex items-center border border-secondary/40 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-secondary hover:bg-secondary-soft focus-visible:outline-none"
+            className="interactive-lift rounded-control inline-flex items-center border border-secondary/40 px-5 py-3 text-sm font-semibold text-foreground hover:border-secondary hover:bg-secondary-soft hover:interactive-lift-hover focus-visible:outline-none"
             href={`mailto:${commonData.contact.email}`}
           >
             {t.hero.contact}

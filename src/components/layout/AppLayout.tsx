@@ -11,7 +11,7 @@ export function AppLayout({ children }: PropsWithChildren) {
       <section className="app-container flex min-h-section flex-col py-6">
         <header className="flex items-center justify-between">
           <a
-            className="rounded-app text-sm font-semibold tracking-wide text-foreground transition hover:text-primary-hover focus-visible:outline-none"
+            className="transition-theme-fast rounded-control text-sm font-semibold tracking-wide text-foreground hover:text-primary-hover focus-visible:outline-none"
             href={commonData.social.github}
             aria-label={t.common.openProfile}
           >
