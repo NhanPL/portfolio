@@ -1,4 +1,4 @@
-import { Card, SectionTitle } from '@/components/common'
+import { Card, Reveal, SectionTitle } from '@/components/common'
 import { commonData } from '@/data/common'
 import { useLanguage } from '@/hooks/useLanguage'
 import { getSectionDisplayIndex } from '@/utils/sectionIndex'
@@ -12,7 +12,7 @@ export function AboutSection() {
       id="about"
       aria-labelledby="about-title"
     >
-      <div>
+      <Reveal mode="section">
         <SectionTitle
           description={t.about.description}
           index={getSectionDisplayIndex('about')}
@@ -28,18 +28,20 @@ export function AboutSection() {
             </Card>
           ))}
         </div>
-      </div>
+      </Reveal>
 
-      <Card className="relative overflow-hidden p-0" gradientBorder>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-soft via-transparent to-secondary-soft" />
-        <img
-          alt={t.hero.avatarAlt}
-          className="relative aspect-[16/10] w-full object-cover"
-          decoding="async"
-          loading="lazy"
-          src={commonData.avatar}
-        />
-      </Card>
+      <Reveal delay={0.12}>
+        <Card className="relative overflow-hidden p-0" gradientBorder>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-soft via-transparent to-secondary-soft" />
+          <img
+            alt={t.hero.avatarAlt}
+            className="relative aspect-[16/10] w-full object-cover"
+            decoding="async"
+            loading="lazy"
+            src={commonData.avatar}
+          />
+        </Card>
+      </Reveal>
     </section>
   )
 }

@@ -1,25 +1,36 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
+import type { MouseEventHandler, ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import { cn } from '@/utils/cn'
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'icon'
 
 type ButtonBaseProps = {
+  'aria-label'?: string
   children?: ReactNode
   className?: string
   icon?: ReactNode
   iconPosition?: 'left' | 'right'
+  id?: string
+  rel?: string
+  target?: string
+  title?: string
   variant?: ButtonVariant
 }
 
-type NativeButtonProps = ButtonBaseProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
-    href?: never
-  }
+type NativeButtonProps = ButtonBaseProps & {
+  disabled?: boolean
+  href?: never
+  name?: string
+  onClick?: MouseEventHandler<HTMLButtonElement>
+  type?: 'button' | 'submit' | 'reset'
+  value?: string
+}
 
-type LinkButtonProps = ButtonBaseProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
-    href: string
-  }
+type LinkButtonProps = ButtonBaseProps & {
+  download?: boolean | string
+  href: string
+  onClick?: MouseEventHandler<HTMLAnchorElement>
+}
 
 export type ButtonProps = NativeButtonProps | LinkButtonProps
 
@@ -58,17 +69,28 @@ export function Button({
     const linkProps = props as LinkButtonProps
 
     return (
-      <a className={buttonClassName} {...linkProps}>
+      <motion.a
+        className={buttonClassName}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+        {...linkProps}
+      >
         {content}
-      </a>
+      </motion.a>
     )
   }
 
-  const buttonProps = props as ButtonHTMLAttributes<HTMLButtonElement>
+  const buttonProps = props as NativeButtonProps
 
   return (
-    <button className={buttonClassName} type={buttonProps.type ?? 'button'} {...buttonProps}>
+    <motion.button
+      className={buttonClassName}
+      type={buttonProps.type ?? 'button'}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.97 }}
+      {...buttonProps}
+    >
       {content}
-    </button>
+    </motion.button>
   )
 }
