@@ -35,11 +35,21 @@ body {
 }
 
 html[data-layout-mode='vertical'] {
+  height: auto;
   overflow-x: hidden;
   overflow-y: auto;
+  overscroll-behavior-y: auto;
 }
 
-html[data-layout-mode='vertical'] body,
+html[data-layout-mode='vertical'] body {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 html[data-layout-mode='vertical'] #root {
   height: auto;
   min-height: 100%;

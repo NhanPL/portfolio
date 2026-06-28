@@ -1,4 +1,4 @@
-import { useEffect, type PropsWithChildren } from 'react'
+import { useLayoutEffect, type PropsWithChildren } from 'react'
 import type { SectionId } from '@/data'
 import { FloatingBackground } from '@/components/common'
 import type { PresentationMode } from '@/hooks/usePresentationMode'
@@ -25,11 +25,58 @@ export function AppLayout({
 }: AppLayoutProps) {
   const { t } = useLanguage()
 
-  useEffect(() => {
-    document.documentElement.dataset.layoutMode = layoutMode
+  useLayoutEffect(() => {
+    const html = document.documentElement
+    const body = document.body
+    const appRoot = document.getElementById('root')
+    const isVertical = layoutMode === 'vertical'
+
+    html.dataset.layoutMode = layoutMode
+    html.style.height = isVertical ? 'auto' : ''
+    html.style.overflowX = isVertical ? 'hidden' : ''
+    html.style.overflowY = isVertical ? 'auto' : ''
+    html.style.overscrollBehaviorY = isVertical ? 'auto' : ''
+
+    body.style.height = isVertical ? 'auto' : ''
+    body.style.minHeight = isVertical ? '100%' : ''
+    body.style.overflowX = isVertical ? 'hidden' : ''
+    body.style.overflowY = isVertical ? 'auto' : ''
+    body.style.overscrollBehaviorY = isVertical ? 'auto' : ''
+    body.style.touchAction = isVertical ? 'pan-y' : ''
+    if (isVertical) {
+      body.style.setProperty('-webkit-overflow-scrolling', 'touch')
+    } else {
+      body.style.removeProperty('-webkit-overflow-scrolling')
+    }
+
+    if (appRoot) {
+      appRoot.style.height = isVertical ? 'auto' : ''
+      appRoot.style.minHeight = isVertical ? '100%' : ''
+      appRoot.style.overflowX = isVertical ? 'hidden' : ''
+      appRoot.style.overflowY = isVertical ? 'visible' : ''
+    }
 
     return () => {
-      delete document.documentElement.dataset.layoutMode
+      delete html.dataset.layoutMode
+      html.style.height = ''
+      html.style.overflowX = ''
+      html.style.overflowY = ''
+      html.style.overscrollBehaviorY = ''
+
+      body.style.height = ''
+      body.style.minHeight = ''
+      body.style.overflowX = ''
+      body.style.overflowY = ''
+      body.style.overscrollBehaviorY = ''
+      body.style.touchAction = ''
+      body.style.removeProperty('-webkit-overflow-scrolling')
+
+      if (appRoot) {
+        appRoot.style.height = ''
+        appRoot.style.minHeight = ''
+        appRoot.style.overflowX = ''
+        appRoot.style.overflowY = ''
+      }
     }
   }, [layoutMode])
 
