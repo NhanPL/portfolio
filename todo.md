@@ -92,12 +92,12 @@ DONE
 
 Checklist
 
-- [ ] Colors
-- [ ] Typography
-- [ ] Container
-- [ ] Breakpoints
-- [ ] Scrollbar
-- [ ] Global CSS
+- [x] Colors
+- [x] Typography
+- [x] Container
+- [x] Breakpoints
+- [x] Scrollbar
+- [x] Global CSS
 
 ---
 
