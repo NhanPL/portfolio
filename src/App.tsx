@@ -1,6 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
 import { AppLayout } from '@/components/layout'
-import { HeroSection } from '@/components/sections'
+import {
+  AboutSection,
+  CertificatesSection,
+  ContactSection,
+  ExperienceSection,
+  HeroSection,
+  ProjectsSection,
+  SkillsSection,
+} from '@/components/sections'
 
 function App() {
   return (
@@ -10,6 +18,12 @@ function App() {
         element={
           <AppLayout>
             <HeroSection />
+            <AboutSection />
+            <SkillsSection />
+            <ExperienceSection />
+            <ProjectsSection />
+            <CertificatesSection />
+            <ContactSection />
           </AppLayout>
         }
       />
