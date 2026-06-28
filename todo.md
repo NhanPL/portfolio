@@ -159,10 +159,10 @@ All language files have identical structure.
 
 Checklist
 
-- [ ] Layout
-- [ ] Header
-- [ ] Footer
-- [ ] Main Container
+- [x] Layout
+- [x] Header
+- [x] Footer
+- [x] Main Container
 
 ---
 
