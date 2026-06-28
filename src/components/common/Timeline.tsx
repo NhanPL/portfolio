@@ -14,16 +14,20 @@ export type TimelineProps = {
 
 export function Timeline({ items }: TimelineProps) {
   return (
-    <div className="relative grid gap-5">
-      <div className="absolute bottom-4 left-4 top-4 hidden w-px bg-gradient-to-b from-primary via-secondary to-accent sm:block" />
+    <div className="grid">
       {items.map((item) => (
         <div
-          className="relative grid gap-4 sm:grid-cols-[7rem_1fr]"
+          className="grid gap-4 pb-5 last:pb-0 sm:grid-cols-[8rem_2rem_minmax(0,1fr)] sm:gap-0"
           key={`${item.role}-${item.period}`}
         >
-          <div className="hidden pt-5 text-sm text-foreground-muted sm:block">{item.period}</div>
-          <div className="absolute left-[0.8125rem] top-6 hidden size-2.5 rounded-pill bg-primary shadow-glow-primary sm:block" />
-          <Card className="sm:ml-8" gradientBorder>
+          <div className="hidden pr-5 pt-5 text-right text-sm text-foreground-muted sm:block">
+            {item.period}
+          </div>
+          <div className="relative hidden justify-center sm:flex">
+            <div className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-primary via-secondary to-accent" />
+            <div className="relative mt-6 size-3 rounded-pill border-2 border-background bg-primary shadow-glow-primary" />
+          </div>
+          <Card className="sm:ml-5" gradientBorder>
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
               <div>
                 <p className="text-xs font-medium text-secondary sm:hidden">{item.period}</p>
