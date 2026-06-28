@@ -14,26 +14,26 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 24 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-fuchsia-300">
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-primary-hover">
           {t.hero.greeting}
         </p>
-        <h1 className="text-4xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
+        <h1 className="font-display text-4xl font-bold leading-tight text-foreground sm:text-6xl lg:text-7xl">
           {t.hero.name}
         </h1>
-        <p className="mt-5 max-w-2xl text-xl text-sky-200 sm:text-2xl">{t.hero.role}</p>
-        <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+        <p className="mt-5 max-w-2xl text-xl text-secondary sm:text-2xl">{t.hero.role}</p>
+        <p className="mt-6 max-w-2xl text-base leading-8 text-foreground-muted sm:text-lg">
           {t.hero.description}
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <a
-            className="inline-flex items-center gap-2 rounded bg-fuchsia-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/20 transition hover:bg-fuchsia-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-200"
+            className="rounded-app inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-foreground shadow-glow-primary transition hover:bg-primary-hover focus-visible:outline-none"
             href={commonData.cv[language]}
           >
             {t.hero.downloadCv}
             <ArrowRight className="size-4" aria-hidden="true" />
           </a>
           <a
-            className="inline-flex items-center rounded border border-sky-300/40 px-5 py-3 text-sm font-semibold text-sky-100 transition hover:border-sky-200 hover:bg-sky-300/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
+            className="rounded-app inline-flex items-center border border-secondary/40 px-5 py-3 text-sm font-semibold text-foreground transition hover:border-secondary hover:bg-secondary-soft focus-visible:outline-none"
             href={`mailto:${commonData.contact.email}`}
           >
             {t.hero.contact}
@@ -47,10 +47,10 @@ export function HeroSection() {
         initial={{ opacity: 0, scale: 0.94 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-500/25 via-sky-400/20 to-pink-400/25 blur-3xl" />
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-soft via-secondary-soft to-accent-soft blur-3xl" />
         <img
           alt={t.hero.avatarAlt}
-          className="relative h-full w-full rounded-full border border-white/10 object-cover shadow-2xl shadow-sky-500/10"
+          className="relative h-full w-full rounded-full border border-border object-cover shadow-glow-secondary"
           decoding="async"
           loading="lazy"
           src={commonData.avatar}
