@@ -1,43 +1,51 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { LanguageSwitcher } from '@/components/common'
+import type { SectionId } from '@/data'
 import { commonData } from '@/data/common'
-import { useActiveSection } from '@/hooks/useActiveSection'
 import { useLanguage } from '@/hooks/useLanguage'
 import { cn } from '@/utils/cn'
 
-export function Header() {
+type HeaderProps = {
+  activeSection: SectionId
+  onNavigate: (sectionId: SectionId) => void
+}
+
+export function Header({ activeSection, onNavigate }: HeaderProps) {
   const { t } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const sectionIds = useMemo(() => commonData.sections.map((section) => section.id), [])
-  const activeSection = useActiveSection(sectionIds)
 
   const closeMenu = () => setIsMenuOpen(false)
+  const navigateToSection = (sectionId: SectionId) => {
+    closeMenu()
+    onNavigate(sectionId)
+  }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/75 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/75 backdrop-blur-xl">
       <div className="app-container flex min-h-[var(--app-header-height)] items-center justify-between py-3">
-        <a
+        <button
           className="transition-theme-fast rounded-control text-lg font-bold tracking-wide text-foreground hover:text-primary-hover focus-visible:outline-none"
-          href="#hero"
           aria-label={t.common.openProfile}
-          onClick={closeMenu}
+          onClick={() => navigateToSection('hero')}
+          type="button"
         >
           {commonData.brand}
-        </a>
+        </button>
 
         <nav className="hidden items-center gap-5 lg:flex" aria-label={t.navigation.ariaLabel}>
           {commonData.sections.map((section) => (
-            <a
+            <button
               className={cn(
                 'transition-theme-fast rounded-control text-sm font-medium hover:text-foreground focus-visible:outline-none',
                 activeSection === section.id ? 'text-primary-hover' : 'text-foreground-muted',
               )}
-              href={section.href}
               key={section.id}
+              onClick={() => navigateToSection(section.id)}
+              type="button"
             >
               {t.navigation.items[section.id]}
-            </a>
+            </button>
           ))}
         </nav>
 
@@ -64,19 +72,19 @@ export function Header() {
         <div className="app-container border-t border-border py-4 lg:hidden">
           <nav className="grid gap-2" aria-label={t.navigation.ariaLabel}>
             {commonData.sections.map((section) => (
-              <a
+              <button
                 className={cn(
-                  'transition-theme-fast rounded-control px-3 py-2 text-sm font-medium focus-visible:outline-none',
+                  'transition-theme-fast rounded-control px-3 py-2 text-left text-sm font-medium focus-visible:outline-none',
                   activeSection === section.id
                     ? 'bg-primary-soft text-primary-hover'
                     : 'text-foreground-muted hover:bg-background-soft hover:text-foreground',
                 )}
-                href={section.href}
                 key={section.id}
-                onClick={closeMenu}
+                onClick={() => navigateToSection(section.id)}
+                type="button"
               >
                 {t.navigation.items[section.id]}
-              </a>
+              </button>
             ))}
           </nav>
           <div className="mt-4 border-t border-border pt-4">

@@ -350,31 +350,31 @@ Footer
 
 ## TASK-026
 
-Scroll Reveal
+Scroll Reveal - DONE
 
 ---
 
 ## TASK-027
 
-Hover Animation
+Hover Animation - DONE
 
 ---
 
 ## TASK-028
 
-Floating Background
+Floating Background - DONE
 
 ---
 
 ## TASK-029
 
-Button Animation
+Button Animation - DONE
 
 ---
 
 ## TASK-030
 
-Section Transition
+Section Transition - DONE
 
 ---
 
