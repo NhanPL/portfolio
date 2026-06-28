@@ -1,8 +1,17 @@
 import type { PropsWithChildren } from 'react'
+import type { PresentationMode } from '@/hooks/usePresentationMode'
 
-export function MainContainer({ children }: PropsWithChildren) {
+type MainContainerProps = PropsWithChildren<{
+  layoutMode: PresentationMode
+}>
+
+export function MainContainer({ children, layoutMode }: MainContainerProps) {
   return (
-    <main className="h-screen overflow-hidden outline-none" id="main-content" tabIndex={-1}>
+    <main
+      className={`${layoutMode === 'horizontal' ? 'h-screen overflow-hidden' : 'min-h-screen overflow-x-hidden pt-[var(--app-header-height)]'} outline-none`}
+      id="main-content"
+      tabIndex={-1}
+    >
       {children}
     </main>
   )

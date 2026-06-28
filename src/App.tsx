@@ -1,6 +1,14 @@
-import { useMemo } from 'react'
+import { startTransition, useEffect, useMemo } from 'react'
+import { useReducedMotion } from 'framer-motion'
 import { Route, Routes } from 'react-router-dom'
-import { AppLayout, HorizontalScroller, type HorizontalSection } from '@/components/layout'
+import {
+  AppLayout,
+  Footer,
+  HorizontalScroller,
+  type HorizontalSection,
+  VerticalSections,
+  type VerticalSection,
+} from '@/components/layout'
 import {
   AboutSection,
   CertificatesSection,
@@ -10,12 +18,18 @@ import {
   ProjectsSection,
   SkillsSection,
 } from '@/components/sections'
+import type { SectionId } from '@/data'
 import { commonData } from '@/data/common'
-import { useSectionNavigation } from '@/hooks/useSectionNavigation'
+import { useActiveSection, usePresentationMode, useSectionNavigation } from '@/hooks'
 
 function App() {
   const sectionIds = useMemo(() => commonData.sections.map((section) => section.id), [])
+  const layoutMode = usePresentationMode()
+  const prefersReducedMotion = useReducedMotion()
   const navigation = useSectionNavigation({ sectionIds })
+  const activeVerticalSection = useActiveSection(sectionIds, {
+    enabled: layoutMode === 'vertical',
+  })
 
   const sections: ReadonlyArray<HorizontalSection> = useMemo(
     () => [
@@ -30,27 +44,71 @@ function App() {
     [],
   )
 
+  const verticalSections: ReadonlyArray<VerticalSection> = sections
+
+  const activeSection =
+    layoutMode === 'horizontal' ? navigation.activeSection : activeVerticalSection
+  const activeIndex = Math.max(0, sectionIds.indexOf(activeSection))
+  const progress =
+    sectionIds.length > 1 ? (activeIndex / Math.max(sectionIds.length - 1, 1)) * 100 : 100
+
+  const handleNavigate = (sectionId: SectionId) => {
+    if (layoutMode === 'horizontal') {
+      navigation.goToSection(sectionId)
+      return
+    }
+
+    const targetSection = document.getElementById(sectionId)
+    if (!targetSection) {
+      return
+    }
+
+    startTransition(() => {
+      targetSection.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    })
+  }
+
+  useEffect(() => {
+    if (layoutMode !== 'vertical') {
+      return
+    }
+
+    navigation.completeTransition()
+  }, [layoutMode, navigation])
+
   return (
     <Routes>
       <Route
         path="/"
         element={
           <AppLayout
-            activeIndex={navigation.activeIndex}
-            activeSection={navigation.activeSection}
-            onNavigate={navigation.goToSection}
-            progress={navigation.progress}
+            activeIndex={activeIndex}
+            activeSection={activeSection}
+            layoutMode={layoutMode}
+            onNavigate={handleNavigate}
+            progress={progress}
           >
-            <HorizontalScroller
-              activeIndex={navigation.activeIndex}
-              completeTransition={navigation.completeTransition}
-              first={navigation.first}
-              isAnimating={navigation.isAnimating}
-              last={navigation.last}
-              next={navigation.next}
-              previous={navigation.previous}
-              sections={sections}
-            />
+            {layoutMode === 'horizontal' ? (
+              <HorizontalScroller
+                activeIndex={navigation.activeIndex}
+                completeTransition={navigation.completeTransition}
+                enabled={layoutMode === 'horizontal'}
+                first={navigation.first}
+                isAnimating={navigation.isAnimating}
+                last={navigation.last}
+                next={navigation.next}
+                previous={navigation.previous}
+                sections={sections}
+              />
+            ) : (
+              <>
+                <VerticalSections sections={verticalSections} />
+                <Footer />
+              </>
+            )}
           </AppLayout>
         }
       />

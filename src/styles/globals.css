@@ -34,6 +34,19 @@ body {
   overflow: hidden;
 }
 
+html[data-layout-mode='vertical'] {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html[data-layout-mode='vertical'] body,
+html[data-layout-mode='vertical'] #root {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
 a {
   color: inherit;
   text-decoration: none;

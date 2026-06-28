@@ -22,7 +22,7 @@ export function Card<T extends ElementType = 'article'>({
   return (
     <Component
       className={cn(
-        'rounded-card border bg-surface/55 p-5 shadow-card backdrop-blur-xl',
+        'rounded-card border bg-surface/55 p-4 shadow-card backdrop-blur-xl sm:p-5',
         gradientBorder
           ? 'border-transparent bg-[linear-gradient(var(--color-surface),var(--color-surface))_padding-box,linear-gradient(135deg,var(--color-primary),var(--color-secondary),var(--color-accent))_border-box]'
           : 'border-border',

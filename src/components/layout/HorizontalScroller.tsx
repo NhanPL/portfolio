@@ -13,6 +13,7 @@ export type HorizontalSection = {
 type HorizontalScrollerProps = {
   activeIndex: number
   completeTransition: () => void
+  enabled: boolean
   first: () => void
   isAnimating: boolean
   last: () => void
@@ -24,6 +25,7 @@ type HorizontalScrollerProps = {
 export function HorizontalScroller({
   activeIndex,
   completeTransition,
+  enabled,
   first,
   isAnimating,
   last,
@@ -34,7 +36,7 @@ export function HorizontalScroller({
   const prefersReducedMotion = useReducedMotion()
 
   useHorizontalScroll({
-    enabled: true,
+    enabled,
     first,
     isAnimating,
     last,

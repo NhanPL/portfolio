@@ -8,7 +8,7 @@ export function HeroSection() {
   const { cvUrl, t } = useLanguage()
 
   return (
-    <div className="app-container grid h-full items-center gap-12 overflow-hidden py-24 lg:grid-cols-[1.05fr_0.95fr]">
+    <div className="app-container grid h-full items-center gap-10 overflow-visible py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:overflow-hidden lg:py-24">
       <motion.div
         animate={{ opacity: 1, y: 0 }}
         className="max-w-3xl"
@@ -19,7 +19,7 @@ export function HeroSection() {
           {t.hero.greeting}
         </p>
         <h1
-          className="font-display text-4xl font-bold leading-tight text-foreground sm:text-6xl lg:text-7xl"
+          className="font-display text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl"
           id="hero-title"
         >
           {t.hero.name}
@@ -44,7 +44,7 @@ export function HeroSection() {
 
       <motion.div
         animate={{ opacity: 1, scale: 1 }}
-        className="relative mx-auto aspect-square w-full max-w-md"
+        className="relative mx-auto aspect-square w-full max-w-xs sm:max-w-sm lg:max-w-md"
         initial={{ opacity: 0, scale: 0.94 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >

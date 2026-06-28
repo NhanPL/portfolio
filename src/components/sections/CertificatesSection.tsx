@@ -7,7 +7,7 @@ export function CertificatesSection() {
   const { t } = useLanguage()
 
   return (
-    <div className="app-container h-full overflow-hidden py-24">
+    <div className="app-container h-full overflow-visible py-16 sm:py-20 lg:overflow-hidden lg:py-24">
       <Reveal mode="section">
         <SectionTitle
           description={t.certificates.description}
@@ -17,7 +17,7 @@ export function CertificatesSection() {
           titleId="certificates-title"
         />
       </Reveal>
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
+      <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 xl:grid-cols-3">
         {t.certificates.items.map((certificate, index) => {
           const assets = commonData.certificateAssets[certificate.slug]
 

@@ -1,10 +1,21 @@
 import { useEffect, useState } from 'react'
 import type { SectionId } from '@/data'
 
-export function useActiveSection(sectionIds: ReadonlyArray<SectionId>) {
+type UseActiveSectionOptions = {
+  enabled?: boolean
+}
+
+export function useActiveSection(
+  sectionIds: ReadonlyArray<SectionId>,
+  { enabled = true }: UseActiveSectionOptions = {},
+) {
   const [activeSection, setActiveSection] = useState<SectionId>(sectionIds[0] ?? 'hero')
 
   useEffect(() => {
+    if (!enabled || typeof IntersectionObserver === 'undefined') {
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntry = entries
@@ -29,7 +40,7 @@ export function useActiveSection(sectionIds: ReadonlyArray<SectionId>) {
     })
 
     return () => observer.disconnect()
-  }, [sectionIds])
+  }, [enabled, sectionIds])
 
   return activeSection
 }
