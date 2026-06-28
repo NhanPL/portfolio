@@ -123,12 +123,12 @@ Checklist
 
 Checklist
 
-- [ ] Context
-- [ ] Provider
-- [ ] Hook
-- [ ] Switch Language
-- [ ] Save Language
-- [ ] Read LocalStorage
+- [x] Context
+- [x] Provider
+- [x] Hook
+- [x] Switch Language
+- [x] Save Language
+- [x] Read LocalStorage
 
 Acceptance Criteria
 

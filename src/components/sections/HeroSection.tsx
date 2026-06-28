@@ -4,7 +4,7 @@ import { commonData } from '@/data/common'
 import { useLanguage } from '@/hooks/useLanguage'
 
 export function HeroSection() {
-  const { language, t } = useLanguage()
+  const { cvUrl, t } = useLanguage()
 
   return (
     <div className="grid flex-1 items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr]">
@@ -27,7 +27,7 @@ export function HeroSection() {
         <div className="mt-8 flex flex-wrap gap-4">
           <a
             className="interactive-lift rounded-control inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-foreground shadow-glow-primary hover:bg-primary-hover hover:interactive-lift-hover focus-visible:outline-none"
-            href={commonData.cv[language]}
+            href={cvUrl}
           >
             {t.hero.downloadCv}
             <ArrowRight className="size-4" aria-hidden="true" />

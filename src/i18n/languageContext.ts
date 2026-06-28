@@ -5,6 +5,7 @@ import type { LanguageCode, Translation } from '@/data'
 export type LanguageContextValue = {
   language: LanguageCode
   languages: typeof languageOptions
+  cvUrl: string
   setLanguage: (language: LanguageCode) => void
   t: Translation
 }
