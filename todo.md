@@ -142,10 +142,10 @@ Language changes without page reload.
 
 Checklist
 
-- [ ] common.ts
-- [ ] vi.ts
-- [ ] en.ts
-- [ ] ja.ts
+- [x] common.ts
+- [x] vi.ts
+- [x] en.ts
+- [x] ja.ts
 
 Acceptance Criteria
 
