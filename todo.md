@@ -64,15 +64,15 @@ High
 
 Checklist
 
-- [ ] assets
-- [ ] components
-- [ ] layouts
-- [ ] hooks
-- [ ] utils
-- [ ] styles
-- [ ] sections
-- [ ] data
-- [ ] i18n
+- [x] assets
+- [x] components
+- [x] layouts
+- [x] hooks
+- [x] utils
+- [x] styles
+- [x] sections
+- [x] data
+- [x] i18n
 
 Acceptance Criteria
 
@@ -81,7 +81,7 @@ Project folder structure matches describe.md.
 Status
 
 ```
-TODO
+DONE
 ```
 
 ---
