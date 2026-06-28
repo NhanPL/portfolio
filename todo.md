@@ -172,10 +172,10 @@ Checklist
 
 Button Component
 
-- [ ] Primary
-- [ ] Secondary
-- [ ] Outline
-- [ ] Icon
+- [x] Primary
+- [x] Secondary
+- [x] Outline
+- [x] Icon
 
 ---
 
@@ -183,9 +183,9 @@ Button Component
 
 Card Component
 
-- [ ] Glass
-- [ ] Hover
-- [ ] Gradient Border
+- [x] Glass
+- [x] Hover
+- [x] Gradient Border
 
 ---
 
@@ -193,9 +193,9 @@ Card Component
 
 Section Title
 
-- [ ] Subtitle
-- [ ] Title
-- [ ] Description
+- [x] Subtitle
+- [x] Title
+- [x] Description
 
 ---
 
@@ -203,10 +203,10 @@ Section Title
 
 Social Icons
 
-- [ ] Github
-- [ ] LinkedIn
-- [ ] Facebook
-- [ ] Email
+- [x] Github
+- [x] LinkedIn
+- [x] Facebook
+- [x] Email
 
 ---
 
@@ -214,7 +214,7 @@ Social Icons
 
 Progress Bar
 
-Animated Skill Bar
+Animated Skill Bar - DONE
 
 ---
 
@@ -222,7 +222,7 @@ Animated Skill Bar
 
 Timeline
 
-Experience Timeline
+Experience Timeline - DONE
 
 ---
 
@@ -230,24 +230,24 @@ Experience Timeline
 
 Project Card
 
-- [ ] Image
-- [ ] Title
-- [ ] Description
-- [ ] Tags
-- [ ] Github
-- [ ] Demo
+- [x] Image
+- [x] Title
+- [x] Description
+- [x] Tags
+- [x] Github
+- [x] Demo
 
 ---
 
 ## TASK-015
 
-Certificate Card
+Certificate Card - DONE
 
 ---
 
 ## TASK-016
 
-Contact Form UI
+Contact Form UI - DONE
 
 ---
 

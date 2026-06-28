@@ -1,14 +1,7 @@
-import { ArrowUp, BriefcaseBusiness, Code2, Mail, Users } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
+import { SocialIcons } from '@/components/common'
 import { commonData } from '@/data/common'
-import type { SocialLink } from '@/data/types'
 import { useLanguage } from '@/hooks/useLanguage'
-
-const socialIconMap = {
-  github: Code2,
-  linkedin: BriefcaseBusiness,
-  facebook: Users,
-  email: Mail,
-} satisfies Record<SocialLink['platform'], typeof Mail>
 
 export function Footer() {
   const { t } = useLanguage()
@@ -41,24 +34,8 @@ export function Footer() {
 
         <div>
           <p className="text-sm font-semibold text-foreground">{t.layout.socialTitle}</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {commonData.socialLinks.map((item) => {
-              const Icon = socialIconMap[item.platform]
-              const isExternalLink = item.href.startsWith('http')
-
-              return (
-                <a
-                  aria-label={item.label}
-                  className="transition-theme-fast rounded-control border border-border p-2 text-foreground-muted hover:border-primary-hover hover:text-foreground focus-visible:outline-none"
-                  href={item.href}
-                  key={item.platform}
-                  rel={isExternalLink ? 'noreferrer' : undefined}
-                  target={isExternalLink ? '_blank' : undefined}
-                >
-                  <Icon className="size-4" aria-hidden="true" />
-                </a>
-              )
-            })}
+          <div className="mt-3">
+            <SocialIcons links={commonData.socialLinks} />
           </div>
         </div>
       </div>

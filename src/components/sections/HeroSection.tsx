@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { Button } from '@/components/common'
 import { commonData } from '@/data/common'
 import { useLanguage } from '@/hooks/useLanguage'
 
@@ -32,19 +33,16 @@ export function HeroSection() {
           {t.hero.description}
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            className="interactive-lift rounded-control inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-foreground shadow-glow-primary hover:bg-primary-hover hover:interactive-lift-hover focus-visible:outline-none"
+          <Button
             href={cvUrl}
+            icon={<ArrowRight className="size-4" aria-hidden="true" />}
+            iconPosition="right"
           >
             {t.hero.downloadCv}
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </a>
-          <a
-            className="interactive-lift rounded-control inline-flex items-center border border-secondary/40 px-5 py-3 text-sm font-semibold text-foreground hover:border-secondary hover:bg-secondary-soft hover:interactive-lift-hover focus-visible:outline-none"
-            href={`mailto:${commonData.contact.email}`}
-          >
+          </Button>
+          <Button href={`mailto:${commonData.contact.email}`} variant="secondary">
             {t.hero.contact}
-          </a>
+          </Button>
         </div>
       </motion.div>
 
