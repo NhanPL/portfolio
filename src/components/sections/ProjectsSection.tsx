@@ -7,11 +7,7 @@ export function ProjectsSection() {
   const { t } = useLanguage()
 
   return (
-    <section
-      className="app-container min-h-section scroll-mt-24 py-16"
-      id="projects"
-      aria-labelledby="projects-title"
-    >
+    <div className="app-container h-full overflow-hidden py-24">
       <Reveal mode="section">
         <SectionTitle
           description={t.projects.description}
@@ -42,6 +38,6 @@ export function ProjectsSection() {
           )
         })}
       </div>
-    </section>
+    </div>
   )
 }

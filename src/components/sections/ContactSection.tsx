@@ -14,11 +14,7 @@ export function ContactSection() {
   ]
 
   return (
-    <section
-      className="app-container min-h-section scroll-mt-24 py-16"
-      id="contact"
-      aria-labelledby="contact-title"
-    >
+    <div className="app-container h-full overflow-hidden py-24">
       <Reveal mode="section">
         <SectionTitle
           description={t.contact.description}
@@ -59,6 +55,6 @@ export function ContactSection() {
           <ContactForm labels={t.contact.form} />
         </Reveal>
       </div>
-    </section>
+    </div>
   )
 }

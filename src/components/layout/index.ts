@@ -1,4 +1,8 @@
 export { AppLayout } from '@/components/layout/AppLayout'
 export { Footer } from '@/components/layout/Footer'
 export { Header } from '@/components/layout/Header'
+export { HorizontalScroller } from '@/components/layout/HorizontalScroller'
+export type { HorizontalSection } from '@/components/layout/HorizontalScroller'
 export { MainContainer } from '@/components/layout/MainContainer'
+export { ProgressIndicator } from '@/components/layout/ProgressIndicator'
+export { SectionWrapper } from '@/components/layout/SectionWrapper'

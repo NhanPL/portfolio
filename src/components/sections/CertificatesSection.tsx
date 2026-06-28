@@ -7,11 +7,7 @@ export function CertificatesSection() {
   const { t } = useLanguage()
 
   return (
-    <section
-      className="app-container min-h-section scroll-mt-24 py-16"
-      id="certificates"
-      aria-labelledby="certificates-title"
-    >
+    <div className="app-container h-full overflow-hidden py-24">
       <Reveal mode="section">
         <SectionTitle
           description={t.certificates.description}
@@ -41,6 +37,6 @@ export function CertificatesSection() {
           )
         })}
       </div>
-    </section>
+    </div>
   )
 }

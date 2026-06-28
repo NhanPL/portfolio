@@ -7,11 +7,7 @@ export function AboutSection() {
   const { t } = useLanguage()
 
   return (
-    <section
-      className="app-container grid min-h-section scroll-mt-24 items-center gap-10 py-16 lg:grid-cols-[0.9fr_1.1fr]"
-      id="about"
-      aria-labelledby="about-title"
-    >
+    <div className="app-container grid h-full items-center gap-10 overflow-hidden py-24 lg:grid-cols-[0.9fr_1.1fr]">
       <Reveal mode="section">
         <SectionTitle
           description={t.about.description}
@@ -42,6 +38,6 @@ export function AboutSection() {
           />
         </Card>
       </Reveal>
-    </section>
+    </div>
   )
 }

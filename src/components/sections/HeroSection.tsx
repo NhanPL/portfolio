@@ -8,11 +8,7 @@ export function HeroSection() {
   const { cvUrl, t } = useLanguage()
 
   return (
-    <section
-      className="app-container grid min-h-section scroll-mt-24 items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr]"
-      id="hero"
-      aria-labelledby="hero-title"
-    >
+    <div className="app-container grid h-full items-center gap-12 overflow-hidden py-24 lg:grid-cols-[1.05fr_0.95fr]">
       <motion.div
         animate={{ opacity: 1, y: 0 }}
         className="max-w-3xl"
@@ -61,6 +57,6 @@ export function HeroSection() {
           src={commonData.avatar}
         />
       </motion.div>
-    </section>
+    </div>
   )
 }

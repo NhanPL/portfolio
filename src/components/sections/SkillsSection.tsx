@@ -15,11 +15,7 @@ export function SkillsSection() {
   )
 
   return (
-    <section
-      className="app-container min-h-section scroll-mt-24 py-16"
-      id="skills"
-      aria-labelledby="skills-title"
-    >
+    <div className="app-container h-full overflow-hidden py-24">
       <Reveal mode="section">
         <SectionTitle
           description={t.skills.description}
@@ -52,6 +48,6 @@ export function SkillsSection() {
           )
         })}
       </div>
-    </section>
+    </div>
   )
 }

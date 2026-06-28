@@ -6,11 +6,7 @@ export function ExperienceSection() {
   const { t } = useLanguage()
 
   return (
-    <section
-      className="app-container min-h-section scroll-mt-24 py-16"
-      id="experience"
-      aria-labelledby="experience-title"
-    >
+    <div className="app-container h-full overflow-hidden py-24">
       <Reveal mode="section">
         <SectionTitle
           description={t.experience.description}
@@ -23,6 +19,6 @@ export function ExperienceSection() {
       <Reveal className="mt-10" delay={0.1}>
         <Timeline items={t.experience.items} />
       </Reveal>
-    </section>
+    </div>
   )
 }
