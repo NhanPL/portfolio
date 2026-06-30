@@ -27,6 +27,14 @@ export type SocialLink = {
 export type CommonData = {
   brand: string
   avatar: string
+  site: {
+    localeByLanguage: Record<LanguageCode, string>
+    name: string
+    ogImage: string
+    ogImageAlt: string
+    themeColor: string
+    url: string
+  }
   sections: ReadonlyArray<NavigationSection>
   contact: {
     email: string

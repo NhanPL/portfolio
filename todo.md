@@ -434,11 +434,23 @@ DONE
 
 Metadata
 
+Status
+
+```text
+DONE
+```
+
 ---
 
 ## TASK-036
 
 Open Graph
+
+Status
+
+```text
+DONE
+```
 
 ---
 
@@ -446,11 +458,23 @@ Open Graph
 
 Robots
 
+Status
+
+```text
+DONE
+```
+
 ---
 
 ## TASK-038
 
 Sitemap
+
+Status
+
+```text
+DONE
+```
 
 ---
 
