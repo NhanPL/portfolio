@@ -384,11 +384,23 @@ Section Transition - DONE
 
 Mobile
 
+Status
+
+```text
+DONE
+```
+
 ---
 
 ## TASK-032
 
 Tablet
+
+Status
+
+```text
+DONE
+```
 
 ---
 
@@ -396,11 +408,23 @@ Tablet
 
 Laptop
 
+Status
+
+```text
+DONE
+```
+
 ---
 
 ## TASK-034
 
 Desktop
+
+Status
+
+```text
+DONE
+```
 
 ---
 

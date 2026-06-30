@@ -1,4 +1,5 @@
 export { useActiveSection } from '@/hooks/useActiveSection'
 export { useHorizontalScroll } from '@/hooks/useHorizontalScroll'
 export { useLanguage } from '@/hooks/useLanguage'
+export { usePresentationMode } from '@/hooks/usePresentationMode'
 export { useSectionNavigation } from '@/hooks/useSectionNavigation'

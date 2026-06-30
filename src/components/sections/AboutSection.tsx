@@ -7,7 +7,7 @@ export function AboutSection() {
   const { t } = useLanguage()
 
   return (
-    <div className="app-container grid h-full items-center gap-10 overflow-hidden py-24 lg:grid-cols-[0.9fr_1.1fr]">
+    <div className="app-container grid h-full items-center gap-8 overflow-visible py-16 sm:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:overflow-hidden lg:py-24">
       <Reveal mode="section">
         <SectionTitle
           description={t.about.description}
@@ -26,7 +26,7 @@ export function AboutSection() {
         </div>
       </Reveal>
 
-      <Reveal delay={0.12}>
+      <Reveal className="hidden lg:block" delay={0.12}>
         <Card className="relative overflow-hidden p-0" gradientBorder>
           <div className="absolute inset-0 bg-gradient-to-br from-primary-soft via-transparent to-secondary-soft" />
           <img

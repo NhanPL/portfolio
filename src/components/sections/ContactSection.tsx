@@ -14,7 +14,7 @@ export function ContactSection() {
   ]
 
   return (
-    <div className="app-container h-full overflow-hidden py-24">
+    <div className="app-container h-full overflow-visible py-16 sm:py-20 lg:overflow-hidden lg:py-24">
       <Reveal mode="section">
         <SectionTitle
           description={t.contact.description}
@@ -25,7 +25,7 @@ export function ContactSection() {
         />
       </Reveal>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+      <div className="mt-8 grid gap-6 md:mt-10 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <Card gradientBorder>
             <div className="grid gap-4">

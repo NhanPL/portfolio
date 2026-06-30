@@ -26,7 +26,7 @@ export function ProjectCard({
   title,
 }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden p-0" gradientBorder>
+    <Card className="flex h-full flex-col overflow-hidden p-0" gradientBorder>
       <img
         alt={imageAlt}
         className="aspect-[16/10] w-full object-cover"
@@ -34,9 +34,9 @@ export function ProjectCard({
         loading="lazy"
         src={image}
       />
-      <div className="p-5">
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
         <h3 className="text-lg font-bold text-foreground">{title}</h3>
-        <p className="mt-2 text-sm leading-6 text-foreground-muted">{description}</p>
+        <p className="mt-2 line-clamp-3 text-sm leading-6 text-foreground-muted">{description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
@@ -47,7 +47,7 @@ export function ProjectCard({
             </span>
           ))}
         </div>
-        <div className="mt-5 flex gap-2">
+        <div className="mt-auto flex gap-2 pt-5">
           <Button
             aria-label={githubLabel}
             href={githubUrl}

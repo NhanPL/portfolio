@@ -15,17 +15,17 @@ export type TimelineProps = {
 export function Timeline({ items }: TimelineProps) {
   return (
     <div className="relative grid">
-      <div className="absolute bottom-6 left-[9rem] top-6 hidden w-px -translate-x-1/2 bg-gradient-to-b from-primary via-secondary to-accent sm:block" />
+      <div className="absolute bottom-0 left-[9rem] top-0 hidden w-px -translate-x-1/2 bg-gradient-to-b from-primary via-secondary to-accent sm:block" />
       {items.map((item) => (
         <div
-          className="grid gap-4 pb-5 last:pb-0 sm:grid-cols-[8rem_2rem_minmax(0,1fr)] sm:gap-0"
+          className="grid gap-4 pb-4 last:pb-0 sm:grid-cols-[8rem_2rem_minmax(0,1fr)] sm:gap-0"
           key={`${item.role}-${item.period}`}
         >
-          <div className="hidden pr-5 pt-5 text-right text-sm text-foreground-muted sm:block">
+          <div className="hidden pr-5 pt-4 text-right text-sm text-foreground-muted sm:block">
             {item.period}
           </div>
           <div className="relative hidden justify-center sm:flex">
-            <div className="relative z-10 mt-6 size-3 rounded-pill border-2 border-background bg-primary shadow-glow-primary" />
+            <div className="relative z-10 mt-5 size-3 rounded-pill border-2 border-background bg-primary shadow-glow-primary" />
           </div>
           <Card className="sm:ml-5" gradientBorder>
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">

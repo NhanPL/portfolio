@@ -50,13 +50,13 @@ export function ContactForm({ labels, onSubmit }: ContactFormProps) {
       <label className="grid gap-2 text-sm font-medium text-foreground" htmlFor="contact-message">
         {labels.message}
         <textarea
-          className="min-h-32 rounded-control border border-border bg-background-soft px-4 py-3 text-sm text-foreground outline-none transition-theme-fast placeholder:text-muted focus:border-primary-hover"
+          className="min-h-28 rounded-control border border-border bg-background-soft px-4 py-3 text-sm text-foreground outline-none transition-theme-fast placeholder:text-muted focus:border-primary-hover sm:min-h-32"
           id="contact-message"
           name="message"
         />
       </label>
       <Button
-        className="justify-center bg-gradient-to-r from-accent via-primary to-secondary"
+        className="w-full justify-center bg-gradient-to-r from-accent via-primary to-secondary"
         icon={<Send className="size-4" aria-hidden="true" />}
         iconPosition="right"
         type="submit"
