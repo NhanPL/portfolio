@@ -10,6 +10,18 @@ export const languageOptions = [
 export const commonData = {
   brand: 'My Profile',
   avatar,
+  site: {
+    name: 'My Profile',
+    url: 'https://nhanpl.github.io/portfolio/',
+    themeColor: '#020617',
+    ogImage: 'og-image.png',
+    ogImageAlt: 'My Profile portfolio preview',
+    localeByLanguage: {
+      vi: 'vi_VN',
+      en: 'en_US',
+      ja: 'ja_JP',
+    },
+  },
   sections: [
     { id: 'hero', href: '#hero' },
     { id: 'about', href: '#about' },
